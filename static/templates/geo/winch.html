@@ -1,0 +1,21 @@
+{%  extends "geo/geo_base.html" %}
+{% load staticfiles %}
+{% block content %}
+
+{% for item in object_list %}
+
+<div class="container" id="ground_detail" style="background:url('{% static 'img/geo-pics/geo-back-green.png' %}')">
+<div class="row">
+<div class = "col-md-3">
+<img src="{{item.image.url}}" style="height:150px; width: 150px">
+</div>
+<div class = "col-md-9">
+<h2 style="color:#484E71">{{item.title}}</h2>
+
+	<p>{{item.description|linebreaks|truncatewords:30}}</p>
+</div>
+</div>
+<a href="./{{item.id}}">Узнать подробнее</a>
+</div>
+{% endfor %}
+    {% endblock %}
