@@ -132,10 +132,10 @@ MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", 
 
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "static-only")
+STATIC_ROOT = os.path.join(os.path.dirname(os.path.dirname(__file__)), "staticfiles")
 
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "static"),
+    os.path.join(os.path.dirname(os.path.dirname(__file__)), "static"),
 ]
