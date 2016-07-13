@@ -11,7 +11,7 @@ urlpatterns = [
     template_name = "geo/ground.html" )),
     url(r'^ground/(?P<pk>\d+)$', DetailView.as_view(model = Geology,
     	template_name= "geo/ground_detail.html")),
-    url(r'^well/$', ListView.as_view(queryset = Geology.objects.filter(category__title__icontains="Скважинные").order_by("-date")[:5],
+    url(r'^well/$', ListView.as_view(queryset = Geology.objects.filter(category__title__icontains="Скважинные").order_by("-title")[:5],
     template_name = "geo/well.html" )),
     url(r'^well/(?P<pk>\d+)$', DetailView.as_view(model = Geology,
     	template_name= "geo/well_detail.html")),

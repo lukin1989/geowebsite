@@ -3,7 +3,7 @@
 <head>
 {% load static%}
   <meta charset="utf-8">
-  <title>ОсОО "ГЕФА"</title>
+  <title>ОсОО "ГеФС"</title>
   <meta name="description" content="Welcome to my basic template.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -18,9 +18,9 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="0" ></li>
+    <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="2" ></li>
     <li data-target="#myCarousel" data-slide-to="3"></li>
   </ol>
 
@@ -30,28 +30,28 @@
       <img src="{% static "img/header.jpg" %}"  alt="Header">
       <div class="carousel-caption">
     <h1 class="text-right" id="main">Добро пожаловать на наш официальный сайт</h1>
-    <h3 class="text-right" id="ocoo"><em>ОсОО "ГЕФА"</em></h3>
+    <h3 class="text-right" id="ocoo"><em>ОсОО ГеФС</em></h3>
     </div>
     </div>
 
     <div class="item active">
-      <img src="{% static "img/geo-pics/geo.jpg" %}" alt="Geo">
+      <img src="{% static "img/geo.jpg" %}" alt="Geo">
       <div class="carousel-caption">
-    <h1 class="text-right" id="main">У нас вы можете приобрести оборудование из области геофизики</h1>
+    <h1 class="text-right" id="main">Геофизическое оборудование</h1>
     </div>
     </div>
 
     <div class="item ">
       <img src="{% static "img/elect3.jpg" %}"  alt="Electronic">
       <div class="carousel-caption">
-    <h1 class="text-right" id="main">Ознакомиться с нашим ассортиментом электроники</h1>
+    <h1 class="text-right" id="main">Электроника и комплектующие</h1>
     </div>
     </div>
 
     <div class="item">
-      <img src="{% static "img/matal2.jpg" %}"  alt="Metal">
+      <img src="{% static "img/metal.jpg" %}"  alt="Metal">
       <div class="carousel-caption">
-    <h1 class="text-right" id="main"><em>Увидеть наше оборудование по металлообработке</em></h1>
+    <h1 class="text-right" id="main"><em>Услуги по металлообработке</em></h1>
     </div>
     </div>
 </div>
@@ -70,27 +70,27 @@
 </div>
 </head>
 
-<div id="main-navbar">
-<ul class="nav nav-tabs nav-justified">
-  <li "><a href="#" class="hvr-curl-top-left" style="background-color:#F0A637 ">Электроника</a></li>
-  <li class="active"><a href="{% url 'geo.views.geo_base' %}" class="hvr-curl-top-left" style="background-color:#F0A637 ">Геофизика</a></li>
-  <li><a href="{% url 'metal.views.metal_base' %}" class="hvr-curl-top-left" style="background-color:#F0A637">Металлообработка</a></li>
-  <li><a href="#" class="hvr-curl-top-left" style="background-color:#F0A637 ">Разное</a></li>
-</ul>
+<div class="container" id="main-navbar">
+<div class="row">
+<div class="col-md-3">
+<a href="#" class="hvr-float-shadow"><img src="{% static 'img/geo-pics/electronic_geo.png' %}" style="height:100px; width: auto;"></a>
 </div>
-<nav class="navbar navbar-default filter:alpha(opacity=90)">
+<div class="col-md-3">
+<a href="{% url 'geo.views.geo_base' %}" class="hvr-float-shadow"><img src="{% static 'img/geo-pics/geo_geo.png' %}" style="height:100px; width: auto;"></a>
+</div>
+<div class="col-md-3">
+<a href="{% url 'metal.views.metal_base' %}" class="hvr-float-shadow"><img src="{% static 'img/geo-pics/metal_geo.png' %}" style="height:100px; width: auto;"></a>
+</div>
+<div class="col-md-3">
+<a href="#" class="hvr-float-shadow"><img src="{% static 'img/geo-pics/junk_geo.png' %}" style="height:100px; width: auto;"></a>
+</div>
+</div>
+</div>
+<nav class="navbar navbar-default ">
   <div class="container-fluid" >
     <ul class="nav navbar-nav navbar-right" id="nav_geo" >
     <li> <a href="#" class="navbar-brand active" ><span class="glyphicon glyphicon-home"></span></a></li>
       <li ><a href="#">О компании</a></li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="glyphicon glyphicon-book"></span> Каталог оборудования<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Скважинное оборудование</a></li>
-          <li><a href="#">Наземая аппаратура</a></li>
-          <li><a href="#">Лебедки</a></li>
-        </ul>
-        </li>
         <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="glyphicon glyphicon-book"></span> Галерея<span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -104,35 +104,30 @@
 </header>
 </section>
 <body>
-<section id="body" style="background:url('{% static 'img/geo-pics/geo-back-yellow.png' %}'); -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;" >
+<section id="body" style="background:url('{% static 'img/geo-pics/geo-back-green.png' %}'); -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;" >
   <div class = "container-fluid " >
   <div class="row" >
-  <div class="col-md-2"  >
-  <ul id="left_sidebar_geo">
-  <li><a href="#">Информация</a></li>
-  <li><a href="#">Последние новости</a></li>
-  <li><a href="#">Пункт3</a></li>
-  <li><a href="#">Пункт4</a></li>
-  <li><a href="#">Пункт5</a></li>
-  <li><a href="#">Пункт6</a></li>
-  <li><a href="#">Пункт7</a></li>
-  <li><a href="#">Пункт8</a></li>
-  <li><a href="#">Пункт9</a></li>
-  <li><a href="#">Пункт10</a></li>
-  </ul>
-  </div>
   <div class="col-md-10"  >
   {% block content %}
     {% endblock %}
+    </div>
+    <div class="col-md-2">
+      <p>Filter</p>
+    </div>
+    </div>
 </section>
-<footer class="jumbotron" style="background:url('{% static 'img/geo-pics/geo-back-yellow.png' %}'); -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;" id="foot-el" >
+<footer class="jumbotron" style="background:url('{% static 'img/geo-pics/geo-back-green.png' %}'); -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;" id="foot-el" >
 <div class = "container-fluid" id="footer-container">
 <div class = "row">
 <div class="col-md-4">
 <ul>
   <li>Наш адрес : </li>
-  <li>Контактный номер телефона</li>
-  <li>Наш e-mail</li>
+  <ul>Можете связаться с  нами по указанным телефонам: <ul>
+    <li>0312 881164</li>
+    <li>0556 432393</li>
+    <li>0772 191286</li>
+    </ul>
+  <li>Наш e-mail: <a href="https://my.mail.ru/mail/gefs-kg/"> GEFS-KG@mail.ru</a></li>
 </ul>
 </div>
 <div class="col-md-4">
@@ -142,9 +137,13 @@
 </ul>
 </div>
 <div class="col-md-4">
-<ul>
-  <li>Наши партнеры</li>
-</ul>
+<p>Также можете найти нас на: </p>
+<div class="container" id="footer_icons">
+  <a href="#" ><img src="{% static 'img/geo-pics/facebook_icon_geo.png' %}"></a>
+  <a href="#" ><img src="{% static 'img/geo-pics/gmail_icon_geo.png' %}"></a>
+    <a href="#" ><img src="{% static 'img/geo-pics/mail_icon_geo.png' %}"></a>
+      <a href="#" ><img src="{% static 'img/geo-pics/youtube_icon_geo.png' %}"></a>
+</div>
 </div>
 </div>
 </div>

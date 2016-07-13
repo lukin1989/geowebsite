@@ -3,7 +3,7 @@
 <head>
 {% load static%}
   <meta charset="utf-8">
-  <title>ОсОО "ГЕФА"</title>
+  <title>ГеФС</title>
   <meta name="description" content="Welcome to my basic template.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -11,15 +11,17 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="{% static "css/style.css" %}">
 
-{% load static %}
+
+
+
 <div class="jumbotron" id="jumb-car">
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="0" ></li>
     <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="2" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="3" ></li>
   </ol>
 
   <!-- Wrapper for slides -->
@@ -28,28 +30,28 @@
       <img src="{% static "img/header.jpg" %}"  alt="Header">
       <div class="carousel-caption">
     <h1 class="text-right" id="main">Добро пожаловать на наш официальный сайт</h1>
-    <h3 class="text-right" id="ocoo"><em>ОсОО "ГЕФА"</em></h3>
+    <h3 class="text-right" id="ocoo"><em>ГеФС</em></h3>
     </div>
     </div>
 
-    <div class="item">
-      <img src="{% static "img/geo.jpg" %}" alt="Geo">
+    <div class="item ">
+      <img src="{% static "img/geo-pics/geo.jpg" %}" alt="Geo">
       <div class="carousel-caption">
-    <h1 class="text-right" id="main">У нас вы можете приобрести оборудование из области геофизики</h1>
+    <h1 class="text-right" id="main">Геофизическое оборудование</h1>
     </div>
     </div>
 
     <div class="item active">
       <img src="{% static "img/elect3.jpg" %}"  alt="Electronic">
       <div class="carousel-caption">
-    <h1 class="text-right" id="main">Ознакомиться с нашим ассортиментом электроники</h1>
+    <h1 class="text-right" id="main">Электроника и комплектующие</h1>
     </div>
     </div>
 
-    <div class="item">
+    <div class="item ">
       <img src="{% static "img/matal2.jpg" %}"  alt="Metal">
       <div class="carousel-caption">
-    <h1 class="text-right" id="main"><em>Увидеть наше оборудование по металлообработке</em></h1>
+    <h1 class="text-right" id="main"><em>Услуги по металлообработке</em></h1>
     </div>
     </div>
 </div>
@@ -68,27 +70,27 @@
 </div>
 </head>
 
-<div id="main-navbar">
-<ul class="nav nav-tabs nav-justified">
-  <li class="active"><a href="#" style="background-color:#62EEE4 ">Электроника</a></li>
-  <li><a href="#" style="background-color:#E98059 ">Геофизика</a></li>
-  <li><a href="#" style="background-color:#808080">Металлообработка</a></li>
-  <li><a href="#" style="background-color:#CCFF99 ">Разное</a></li>
-</ul>
+<div class="container" id="main-navbar">
+<div class="row">
+<div class="col-md-3">
+<a href="#" class="hvr-float-shadow"><img src="{% static 'img/metal-pics/el_nav.png' %}" style="height:100px; width: auto;"></a>
 </div>
-<nav class="navbar navbar-default filter:alpha(opacity=50)">
+<div class="col-md-3">
+<a href="{% url 'geo.views.geo_base' %}" class="hvr-float-shadow"><img src="{% static 'img/metal-pics/geo_nav.png' %}" style="height:100px; width: auto;"></a>
+</div>
+<div class="col-md-3">
+<a href="{% url 'metal.views.metal_base' %}" class="hvr-float-shadow"><img src="{% static 'img/metal-pics/metal_nav.png' %}" style="height:100px; width: auto;"></a>
+</div>
+<div class="col-md-3">
+<a href="#" class="hvr-float-shadow"><img src="{% static 'img/metal-pics/junk_nav.png' %}" style="height:100px; width: auto;"></a>
+</div>
+</div>
+</div>
+<nav class="navbar navbar-default filter:alpha(opacity=90)">
   <div class="container-fluid" >
-    <ul class="nav navbar-nav navbar-right" id="nav-el" >
+    <ul class="nav navbar-nav navbar-right" id="nav_metal" >
     <li> <a href="#" class="navbar-brand active" ><span class="glyphicon glyphicon-home"></span></a></li>
       <li ><a href="#">О компании</a></li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="glyphicon glyphicon-book"></span> Каталог оборудования<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Скважинное оборудование</a></li>
-          <li><a href="#">Наземая аппаратура</a></li>
-          <li><a href="#">Лебедки</a></li>
-        </ul>
-        </li>
         <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="glyphicon glyphicon-book"></span> Галерея<span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -102,28 +104,15 @@
 </header>
 </section>
 <body>
-<section id="body" style="background:url('{% static 'img/el5.jpg' %}')" >
-  <div class = "container-fluid" >
+<section id="body" style="background:url('{% static 'img/electronic-pics/el5.jpg' %}'); -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;" >
+  <div class = "container-fluid " >
   <div class="row" >
-  <div class="col-md-3"  >
-  <ul id="left_sidebar">
-  <li><a href="#">Информация</a></li>
-  <li><a href="#">Последние новости</a></li>
-  <li><a href="#">Пункт3</a></li>
-  <li><a href="#">Пункт4</a></li>
-  <li><a href="#">Пункт5</a></li>
-  <li><a href="#">Пункт6</a></li>
-  <li><a href="#">Пункт7</a></li>
-  <li><a href="#">Пункт8</a></li>
-  <li><a href="#">Пункт9</a></li>
-  <li><a href="#">Пункт10</a></li>
-  </ul>
-  </div>
-  <div class="col-md-9"  >
   {% block content %}
     {% endblock %}
+    </div>
+    </div>
 </section>
-<footer class="jumbotron" id="foot-el" >
+<footer class="jumbotron" style="background:url('{% static 'img/metal-pics/metal.png' %}'); -webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;" id="foot-el" >
 <div class = "container-fluid" id="footer-container">
 <div class = "row">
 <div class="col-md-4">
@@ -140,9 +129,13 @@
 </ul>
 </div>
 <div class="col-md-4">
-<ul>
-  <li>Наши партнеры</li>
-</ul>
+<p>Также можете найти нас на: </p>
+<div class="container" id="footer_icons">
+  <a href="#" ><img src="{% static 'img/metal-pics/facebook_icon.png' %}"></a>
+  <a href="#" ><img src="{% static 'img/metal-pics/gmail_icon.png' %}"></a>
+    <a href="#" ><img src="{% static 'img/metal-pics/mail_icon.png' %}"></a>
+      <a href="#" ><img src="{% static 'img/metal-pics/youtube_icon.png' %}"></a>
+</div>
 </div>
 </div>
 </div>

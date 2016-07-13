@@ -2,16 +2,17 @@
 {% load staticfiles %}
 {% block content %}
 
-
+<div class="col-md-offset-1">
 <h3 style="color:#484E71">{{geology.title}}</h3>
-<article>
+<article >
 	<p>{{geology.description|linebreaks}}</p>
 	</article>
+
 <article>
 <p><a href="#demo" data-toggle="collapse" style="color:white" >Технические характеристики:</a></p>
 <div id="demo" class="collapse">
 	<p>{{geology.advanced_description|linebreaks}}</p>
 </article>
 <img src="{{geology.image.url}}" style="height:300px; width: 200px; border:solid 3px #B8D9C9; border-radius: 10px;">
-
+</div>
     {% endblock %}

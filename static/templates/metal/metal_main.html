@@ -2,37 +2,13 @@
 {% load staticfiles %}
 {% block content %}
 <div class="container-fluid" id="met_service">
-<div class="col-md-4">
+{% for item in metal_all %}
+<div class="col-md-4" id="metal_cat">
   <div style=" background:url('{% static 'img/metal-pics/cat_back.png' %}')">
-  <a href=""><img src="{% static 'img/metal-pics/mech.png' %}"  ></a>
-  <p>Осуществляем механо сборочные работы</p>
+  <a href="./{{item.id}}"><img src="{{item.image.url}}" ></a>
+  <p><span id="p_tabs" > {{item.description|truncatewords:8}}</span></p>
   </div>
 </div>
-<div class="col-md-4">
-  <div  style="background:url('{% static 'img/metal-pics/cat_back.png' %}') ">
-  <a href=""><img src="{% static 'img/metal-pics/frezer.png' %}" ></a>
-  <p>Выполняем фрезерные работы</p>
-  </div>
-</div>
-<div class="col-md-4">
-  <div  style="background:url('{% static 'img/metal-pics/cat_back.png' %}')">
-  <a href=""><img src="{% static 'img/metal-pics/shlif.png' %}"></a>
-  <p>Выполняем шлифовальные работы</p>
-  </div>
-</div>
-</div>
-<div class="container-fluid" id="met_service2">
-<div class="col-md-4">
-  <div style="background:url('{% static 'img/metal-pics/cat_back.png' %}')">
-  <a href=""><img src="{% static 'img/metal-pics/swap.png' %}"></a>
-  <p>Выполним свапочные работы</p>
-  </div>
-</div>
-<div class="col-md-4">
-  <div  style="background:url('{% static 'img/metal-pics/cat_back.png' %}')">
-  <a href=""><img src="{% static 'img/metal-pics/tokar.png' %}"></a>
-  <p>Выполним токарные работы любой сложности</p>
-  </div>
-</div>
+{% endfor %}
 </div>
     {% endblock %}

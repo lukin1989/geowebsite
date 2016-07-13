@@ -1,13 +1,15 @@
 {%  extends "geo/geo_base.html" %}
 {% load staticfiles %}
 {% block content %}
-<div class="geo-menu">
-		<a href="well/" class="hvr-pulse-grow"><img src='{% static 'img/geo-pics/skvaj-badge.png' %}'  ></a>
-		<a href="winch/" class="hvr-pulse-grow" ><img src='{% static 'img/geo-pics/leb-badge.png' %}' ></a>
-		<a href="ground/" class="hvr-pulse-grow" ><img src='{% static 'img/geo-pics/ground-badge.png' %}'></a>
+<div class="geo-menu col-md-offset-1">
+		<a href="well/" class="hvr-pulse-grow"><img src='{% static 'img/geo-pics/well_cat.png' %}'  ></a>
+		<a href="winch/" class="hvr-pulse-grow" ><img src='{% static 'img/geo-pics/winch_cat.png' %}' ></a>
+		<a href="ground/" class="hvr-pulse-grow" ><img src='{% static 'img/geo-pics/ground_cat.png' %}'></a>
 </div>
-<article>
+<div class="col-md-offset-1">
+<article >
 	<p>В данном разделе вы сможете ознакомиться с различным ассортиментом оборудования из области Геофизики.</p>
 	<p>Выбрав интересующую вас категорию выше вы сможете увидеть полный список оборудования в выбранной категории, получить полную информацию и описание каждого прибора </p>
 </article>
+</div>
     {% endblock %}

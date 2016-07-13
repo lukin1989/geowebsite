@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^geo/', include('geo.urls')),
     url(r'^metal/', include('metal.urls')),
+    url(r'^electro/', include('electro.urls')),
    
 ] 
 if settings.DEBUG:
