@@ -25,7 +25,7 @@ SECRET_KEY = 'v3yg0dm3e&*0s(gw*9cm!#rb@$da2p%hr3u1-_5n71##omargs'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [*]
 
 
 # Application definition
@@ -88,7 +88,7 @@ DATABASES = {
         'USER': 'geologyuser',
         'PASSWORD': 'GeologY',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': 'port',
     }
 }
 
