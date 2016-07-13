@@ -88,7 +88,7 @@ DATABASES = {
         'USER': 'geologyuser',
         'PASSWORD': 'GeologY',
         'HOST': 'localhost',
-        'PORT': 'port',
+        'PORT': '5432',
     }
 }
 
