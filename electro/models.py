@@ -23,7 +23,7 @@ class Product(models.Model):
 	title = models.CharField(max_length = 200, verbose_name = "Название")
 	category = models.ForeignKey(Category, verbose_name = "Категория")
 	subcategory = models.ForeignKey(SubCategory, verbose_name = "Подкатегория")
-	values = str(JSONField(default = {"values":[]}))
+	values = str(models.JSONField(default = {"values":[]}))
 	description = models.TextField(blank = True, verbose_name = "Описание ")
 	price = models.IntegerField(default = 0)
 	date= models.DateTimeField('Дата добавления')
