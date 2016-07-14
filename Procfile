@@ -1,1 +1,1 @@
-web: gunicorn geoproject.wsgi
+web: gunicorn geowebsite.wsgi
