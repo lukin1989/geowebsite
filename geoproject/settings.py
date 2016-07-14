@@ -90,7 +90,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
     }
-    'default' : dj_database_url.config(default= 'postgres://localhost:5432/polar-reaches-26017')
+   
 }
 
 
