@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'v3yg0dm3e&*0s(gw*9cm!#rb@$da2p%hr3u1-_5n71##omargs'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -40,8 +40,6 @@ INSTALLED_APPS = [
     'geo',
     'metal',
     'electro',
-    'storages',
-    'boto',
  
 ]
 
@@ -84,9 +82,15 @@ os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "templates"),
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'myproject',
+        'USER': 'geologyuser',
+        'PASSWORD': 'GeologY',
+        'HOST': 'localhost',
+        'PORT': '',
     }
+   
 }
 
 
@@ -136,23 +140,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "static"),
 ]
-
-
-# # Allow all host hosts/domain names for this site
-ALLOWED_HOSTS = ['*']
-
-# Parse database configuration from $DATABASE_URL
-import dj_database_url
-
-DATABASES = { 'default' : dj_database_url.config()}
-
-# Honor the 'X-Forwarded-Proto' header for request.is_secure()
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-# try to load local_settings.py if it exists
-try:
-  from local_settings import *
-except Exception as e:
-  pass
 
 
