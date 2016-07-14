@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
-import dj_database_url
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -83,7 +83,7 @@ os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "templates"),
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
 
-DATABASES['default'] = dj_database_url.config()
+
 
 
 # Password validation
@@ -133,4 +133,5 @@ STATICFILES_DIRS = [
     os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "static"),
 ]
 
-
+import dj_database_url
+DATABASES['default'] = dj_database_url.config()
