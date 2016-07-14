@@ -88,7 +88,7 @@ DATABASES = {
         'USER': 'geologyuser',
         'PASSWORD': 'GeologY',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '',
     }
    
 }
@@ -142,5 +142,3 @@ STATICFILES_DIRS = [
 ]
 
 
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
