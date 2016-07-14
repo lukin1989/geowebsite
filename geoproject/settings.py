@@ -90,6 +90,7 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '5432',
     }
+    'default' : dj_database_url.config(default= 'postgres://localhost:5432/polar-reaches-26017')
 }
 
 
@@ -139,3 +140,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(os.path.dirname(os.path.dirname(__file__)), "static", "static"),
 ]
+
+
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
