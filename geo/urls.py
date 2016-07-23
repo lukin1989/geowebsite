@@ -7,6 +7,7 @@ from . models import Geology, Category_geo
 
 urlpatterns = [
     url(r'^$', views.geo_base),
+    url(r'^result$', views.search),
     url(r'^ground/$', ListView.as_view(queryset = Geology.objects.filter(category__title__icontains="Наземное оборудование").order_by("-date")[:5],
     template_name = "geo/ground.html" )),
     url(r'^ground/(?P<pk>\d+)$', DetailView.as_view(model = Geology,
